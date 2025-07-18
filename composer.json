@@ -1,0 +1,24 @@
+{
+    "name": "riftfox/wechat-check-session",
+    "description": "校验服务器所保存的登录态 session_key 是否有效。为了保持 session_key 私密性，接口不明文传输 session_key，而是通过校验登录态签名完成。",
+    "type": "library",
+    "require": {
+        "psr/http-client": "@dev",
+        "psr/http-factory": "@dev",
+        "riftfox/wechat-session": "@dev",
+        "riftfox/wechat-session-signature": "@dev"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Riftfox\\Wechat\\CheckSession\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Riftfox",
+            "email": "riftfox@riftfox.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}
