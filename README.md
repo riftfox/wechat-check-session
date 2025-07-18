@@ -49,7 +49,7 @@ $session->setSessionKey('your-session-key');
 
 try {
     // 校验 session_key
-    $result = $provider->checkSession($application, $session);
+    $result = $provider->checkSession($application, $session,SignatureFactoryInterface::METHOD_HMAC_SHA256);
 
     // 处理结果
     if ($result->isValid()) {
@@ -72,9 +72,6 @@ interface CheckSessionProviderInterface
     // 接口 URL 常量
     const CHECK_SESSION_URL = "https://api.weixin.qq.com/wxa/checksession";
     
-    // 签名方法常量
-    const SIG_METHOD_HMAC_SHA256 = "hmac_sha256";
-    
     /**
      * 校验登录态是否有效
      *
@@ -83,7 +80,7 @@ interface CheckSessionProviderInterface
      * @return ResultInterface 校验结果
      * @throws Exception 请求失败时抛出异常
      */
-    public function checkSession(ApplicationInterface $application, SessionInterface $session): ResultInterface;
+    public function checkSession(ApplicationInterface $application, SessionInterface $session, string $sigMethod=SignatureFactoryInterface::METHOD_HMAC_SHA256): ResultInterface;
 }
 ```
 
