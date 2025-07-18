@@ -21,6 +21,7 @@ composer require riftfox/wechat-check-session
 use Riftfox\Wechat\CheckSession\CheckSessionProvider;
 use Riftfox\Wechat\CheckSession\Session;
 use Riftfox\Wechat\Application\Application;
+use Riftfox\Wechat\SessionSignature\SignatureFactoryInterface;
 use GuzzleHttp\Client;
 use Nyholm\Psr7\Factory\Psr17Factory;
 
